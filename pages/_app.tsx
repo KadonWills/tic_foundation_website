@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
-import ScrollToTop from '../components/scrollToTop';
+import ScrollToTop from '../components/widgets/scrollToTop';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     useEffect(() => {

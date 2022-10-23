@@ -5,6 +5,7 @@ import { ComponentProps } from 'react';
 import Features from '../components/features';
 import Header from '../components/header';
 import Partners from '../components/partners';
+import Programs from '../components/programs';
 
 const Home: NextPage = (props) => {
     return ( 
@@ -17,8 +18,9 @@ const Home: NextPage = (props) => {
         <div className="dark" >
             
             <Header />
-            <Partners />
+            <Programs />
             <Features />
+            <Partners />
             
         </div>
     </>
