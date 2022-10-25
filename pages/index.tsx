@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { ComponentProps } from 'react';
 import Features from '../components/features';
+import Footer from '../components/footer';
 import Header from '../components/header';
 import Partners from '../components/partners';
 import Programs from '../components/programs';
@@ -23,7 +24,7 @@ const Home: NextPage = (props) => {
             <Features />
             <Partners />
             <Testimonials />
-            
+            <Footer />
         </div>
     </>
     );
