@@ -6,6 +6,7 @@ import Features from '../components/features';
 import Header from '../components/header';
 import Partners from '../components/partners';
 import Programs from '../components/programs';
+import Testimonials from '../components/testimonials';
 
 const Home: NextPage = (props) => {
     return ( 
@@ -21,6 +22,7 @@ const Home: NextPage = (props) => {
             <Programs />
             <Features />
             <Partners />
+            <Testimonials />
             
         </div>
     </>
