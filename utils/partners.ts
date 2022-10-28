@@ -10,9 +10,9 @@ const partners = [
         website: "https://www.dinovix.com"
     },
     {
-        name: "TiC",
-        logo: "/img/logo black.png",
-        website: "https://www.dinovix.com"
+        name: "TME Education",
+        logo: "/img/partners/tmeeducation.png",
+        website: "https://tmeeducation.com"
     },
     {
         name: "iKnite",
@@ -20,9 +20,9 @@ const partners = [
         website: "https://www.iknite.studio"
     },
     {
-        name: "GM Tech",
+        name: "Tech Innovation Center",
         logo: "/img/logo black.png",
-        website: "https://www.dinovix.com"
+        website: "https://www.tic.com"
     },
 ];
 
