@@ -90,7 +90,7 @@ const SapCountdown = () => {
 
 const timeDiffCalc = (dateFuture = new Date() ) => {
     let dateNow = new Date();
-    let dateDiff = dateFuture - dateNow;
+    let dateDiff = dateFuture.getTime() - dateNow.getTime();
 
     let diffInMilliSeconds = Math.abs(dateDiff) / 1000;
 
