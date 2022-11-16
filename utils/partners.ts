@@ -1,9 +1,9 @@
 const partners = [
-    {
-        name: "US Embassy to Cameroon",
-        logo: "/img/partners/seal-1.png",
-        website: "https://cm.usembassy.gov"
-    },
+    // {
+    //     name: "US Embassy to Cameroon",
+    //     logo: "/img/partners/seal-1.png",
+    //     website: "https://cm.usembassy.gov"
+    // },
     {
         name: "DINOVIX Ltd",
         logo: "/img/partners/dinovix_dark.png",
