@@ -1,5 +1,5 @@
 .hero {
-  @apply z-40  text-neutral-50 py-16 px-4 md:px-8 overflow-hidden 2xl:px-60 mx-auto grid  gap-8 grid-cols-12 relative !pb-0 bg-gradient-to-r from-blue-700 to-blue-500 min-h-screen;
+  @apply z-40  text-neutral-50 py-16 px-4 md:px-8 overflow-hidden 2xl:px-60 mx-auto grid relative gap-8 grid-cols-12 relative !pb-0 bg-gradient-to-r from-blue-700 to-blue-500 min-h-screen;
 }
 
 .hero div:nth-child(2) {

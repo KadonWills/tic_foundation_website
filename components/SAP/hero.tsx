@@ -96,13 +96,13 @@ export default function Hero() {
         </motion.div>
       </div>
       <motion.div
+        // className="absolute right-0 w-max"
         initial={{ opacity: 0, scale: 1.3 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}>
         <picture>
-          <source srcSet='/hero_women.webp' type='image/webp' />
-          <source srcSet='/hero_women.png' type='image/png' />
-          <img className='z-50 w-full h-full' src='/hero_women.png' alt='' />
+          <source srcSet='/img/guys.png' type='image/png' />
+          <img className='z-50 w-[360px] h-[360px] scale-125 animate-pulse rounded-full object-contain object-center' src='/img/guys.png' alt='' />
         </picture>
       </motion.div>
 

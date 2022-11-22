@@ -19,96 +19,28 @@ export default function Blog() {
         viewport={{ margin: '-100px' }}
         transition={{ duration: 0.5, delay: 0.3 }}>
         <picture>
-          <source srcSet='/blog_1.webp' type='image/webp' />
-          <source srcSet='/blog_1.jpeg' type='image/jpeg' />
-          <img className='w-full' src='/blog_1.jpeg' alt='seo' />
+          <source srcSet='/img/blog_1.webp' type='image/webp' />
+          <source srcSet='/img/blog_1.jpeg' type='image/jpeg' />
+          <img className='w-full' src='/img/blog_1.jpeg' alt='seo' />
         </picture>
         <div className={styles.cardContent}>
-          <h4>Search Engine Optimization Basics</h4>
+          <h4>Why do most startups fail</h4>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
-            ullam ea dolores.
+            1 in 10 , that's theportion of startups that fail to see their 10th birthday. why do these startups in Africa and around f...
           </p>
           <div>
             <small>
               <Image src='/user.svg' width={16} height={16} alt='lorem' /> Basic
             </small>
             <small>
-              <Image src='/time.svg' width={16} height={16} alt='lorem' /> 3.4
-              Hours
+              <Image src='/img/time.svg' width={16} height={16} alt='lorem' /> 30
+              min read
             </small>
           </div>
         </div>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 5 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ margin: '-100px' }}
-        transition={{ duration: 0.5, delay: 0.5 }}>
-        <picture>
-          <source srcSet='/blog_1.webp' type='image/webp' />
-          <source srcSet='/blog_1.jpeg' type='image/jpeg' />
-          <img className='w-full' src='/blog_1.jpeg' alt='seo' />
-        </picture>
-        <div className={styles.cardContent}>
-          <h4>Search Engine Optimization Basics</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
-            ullam ea dolores.
-          </p>
-          <div>
-            <small>
-              <Image src='/user.svg' width={16} height={16} alt='lorem' />
-              Basic
-            </small>
-            <small>
-              <Image
-                src='/time.svg'
-                width={16}
-                height={16}
-                className='mr-1'
-                alt='lorem'
-              />
-              3.4 Hours
-            </small>
-          </div>
-        </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 5 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ margin: '-100px' }}
-        transition={{ duration: 0.5, delay: 0.7 }}>
-        <picture>
-          <source srcSet='/blog_1.webp' type='image/webp' />
-          <source srcSet='/blog_1.jpeg' type='image/jpeg' />
-          <img className='w-full' src='/blog_1.jpeg' alt='seo' />
-        </picture>
-        <div className={styles.cardContent}>
-          <h4>Search Engine Optimization Basics</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
-            ullam ea dolores.
-          </p>
-          <div>
-            <small>
-              <Image src='/user.svg' width={16} height={16} alt='lorem' />
-              Basic
-            </small>
-            <small>
-              <Image
-                src='/time.svg'
-                width={16}
-                height={16}
-                className='mr-1'
-                alt='lorem'
-              />
-              3.4 Hours
-            </small>
-          </div>
-        </div>
-      </motion.div>
-      <motion.a
+    
+      {/* <motion.a
         whileHover={{ opacity: 1, scale: 1.2 }}
         className='opacity-70'
         href='#'>
@@ -126,7 +58,7 @@ export default function Blog() {
             d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
           />
         </motion.svg>
-      </motion.a>
+      </motion.a> */}
     </section>
   );
 }
