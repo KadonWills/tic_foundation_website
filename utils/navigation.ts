@@ -8,7 +8,7 @@ const navigation  = [
     },
     {
         label: "Accelerator",
-        route: "/",
+        route: "/sap",
         content : [
 
         ]

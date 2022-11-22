@@ -15,16 +15,17 @@ const Features = () => {
                 </div>
                 <div className="flex flex-row md:mx-auto w-4/5 flex-wrap -m-4 justify-evenly">
 
+                <>
                     {
-                        featuresList.map((feature) => 
-                            <>
+                        featuresList.map((feature, index) => 
                                 <FeatureCard 
+                                    key={'feature-'+index}
                                     title={feature.title} 
                                     description={feature.description}
                                     image={feature.image} />
-                            </>
                         )
                     }
+                </>
 
 
                     <div className="p-4 md:w-1/3 hidden">

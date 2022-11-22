@@ -50,6 +50,5 @@ const Header: NextComponentType = () => {
   )
 }
 
-Header.propTypes = {}
 
 export default Header
