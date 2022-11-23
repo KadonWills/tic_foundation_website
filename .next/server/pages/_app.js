@@ -1,90 +1,188 @@
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
+"use strict";
 (() => {
 var exports = {};
-exports.id = "pages/_app";
-exports.ids = ["pages/_app"];
+exports.id = 888;
+exports.ids = [888];
 exports.modules = {
 
-/***/ "./components/hooks/useScrollPosition.tsx":
-/*!************************************************!*\
-  !*** ./components/hooks/useScrollPosition.tsx ***!
-  \************************************************/
+/***/ 255:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"useScrollPosition\": () => (/* binding */ useScrollPosition)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nconst useIsomorphicLayoutEffect =  false ? 0 : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;\nconst isBrowser = \"undefined\" !== `undefined`;\nconst zeroPosition = {\n    x: 0,\n    y: 0\n};\nconst getClientRect = (element)=>element?.getBoundingClientRect();\nconst getScrollPosition = ({ element , useWindow , boundingElement  })=>{\n    if (!isBrowser) {\n        return zeroPosition;\n    }\n    if (useWindow) {\n        return {\n            x: window.scrollX,\n            y: window.scrollY\n        };\n    }\n    const targetPosition = getClientRect(element?.current || document.body);\n    const containerPosition = getClientRect(boundingElement?.current);\n    if (!targetPosition) {\n        return zeroPosition;\n    }\n    return containerPosition ? {\n        x: (containerPosition.x || 0) - (targetPosition.x || 0),\n        y: (containerPosition.y || 0) - (targetPosition.y || 0)\n    } : {\n        x: targetPosition.left,\n        y: targetPosition.top\n    };\n};\nconst useScrollPosition = (effect, deps, element, useWindow, wait, boundingElement)=>{\n    const position = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(getScrollPosition({\n        useWindow,\n        boundingElement\n    }));\n    let throttleTimeout = null;\n    const callBack = ()=>{\n        const currPos = getScrollPosition({\n            element,\n            useWindow,\n            boundingElement\n        });\n        effect({\n            prevPos: position.current,\n            currPos\n        });\n        position.current = currPos;\n        throttleTimeout = null;\n    };\n    useIsomorphicLayoutEffect(()=>{\n        if (!isBrowser) {\n            return undefined;\n        }\n        const handleScroll = ()=>{\n            if (wait) {\n                if (throttleTimeout === null) {\n                    throttleTimeout = window.setTimeout(callBack, wait);\n                }\n            } else {\n                callBack();\n            }\n        };\n        if (boundingElement) {\n            boundingElement.current?.addEventListener(\"scroll\", handleScroll, {\n                passive: true\n            });\n        } else {\n            window.addEventListener(\"scroll\", handleScroll, {\n                passive: true\n            });\n        }\n        return ()=>{\n            if (boundingElement) {\n                boundingElement.current?.removeEventListener(\"scroll\", handleScroll);\n            } else {\n                window.removeEventListener(\"scroll\", handleScroll);\n            }\n            if (throttleTimeout) {\n                clearTimeout(throttleTimeout);\n            }\n        };\n    }, deps);\n};\nuseScrollPosition.defaultProps = {\n    deps: [],\n    element: false,\n    useWindow: false,\n    wait: null,\n    boundingElement: false\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2hvb2tzL3VzZVNjcm9sbFBvc2l0aW9uLnRzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBNkY7QUFFN0YsTUFBTUcseUJBQXlCLEdBQzdCLE1BQTZCLEdBQUdILENBQWUsR0FBR0MsNENBQVM7QUFjN0QsTUFBTUcsU0FBUyxHQUFHLFdBQWEsS0FBSyxDQUFDLFNBQVMsQ0FBQztBQUMvQyxNQUFNQyxZQUFZLEdBQUc7SUFBRUMsQ0FBQyxFQUFFLENBQUM7SUFBRUMsQ0FBQyxFQUFFLENBQUM7Q0FBRTtBQUVuQyxNQUFNQyxhQUFhLEdBQUcsQ0FBQ0MsT0FBcUIsR0FBS0EsT0FBTyxFQUFFQyxxQkFBcUIsRUFBRTtBQUVqRixNQUFNQyxpQkFBaUIsR0FBRyxDQUFDLEVBQ3ZCRixPQUFPLEdBQ1BHLFNBQVMsR0FDVEMsZUFBZSxHQUtsQixHQUFLO0lBQ0YsSUFBSSxDQUFDVCxTQUFTLEVBQUU7UUFDWixPQUFPQyxZQUFZLENBQUM7SUFDeEIsQ0FBQztJQUVELElBQUlPLFNBQVMsRUFBRTtRQUNYLE9BQU87WUFBRU4sQ0FBQyxFQUFFUSxNQUFNLENBQUNDLE9BQU87WUFBRVIsQ0FBQyxFQUFFTyxNQUFNLENBQUNFLE9BQU87U0FBRSxDQUFDO0lBQ3BELENBQUM7SUFFRCxNQUFNQyxjQUFjLEdBQUdULGFBQWEsQ0FBQ0MsT0FBTyxFQUFFUyxPQUFPLElBQUlDLFFBQVEsQ0FBQ0MsSUFBSSxDQUFDO0lBQ3ZFLE1BQU1DLGlCQUFpQixHQUFHYixhQUFhLENBQUNLLGVBQWUsRUFBRUssT0FBTyxDQUFDO0lBRWpFLElBQUksQ0FBQ0QsY0FBYyxFQUFFO1FBQ2pCLE9BQU9aLFlBQVksQ0FBQztJQUN4QixDQUFDO0lBRUQsT0FBT2dCLGlCQUFpQixHQUNsQjtRQUNFZixDQUFDLEVBQUUsQ0FBQ2UsaUJBQWlCLENBQUNmLENBQUMsSUFBSSxDQUFDLElBQUtXLENBQUFBLGNBQWMsQ0FBQ1gsQ0FBQyxJQUFJLENBQUM7UUFDdERDLENBQUMsRUFBRSxDQUFDYyxpQkFBaUIsQ0FBQ2QsQ0FBQyxJQUFJLENBQUMsSUFBS1UsQ0FBQUEsY0FBYyxDQUFDVixDQUFDLElBQUksQ0FBQztLQUN6RCxHQUNDO1FBQUVELENBQUMsRUFBRVcsY0FBYyxDQUFDSyxJQUFJO1FBQUVmLENBQUMsRUFBRVUsY0FBYyxDQUFDTSxHQUFHO0tBQUUsQ0FBQztBQUM1RCxDQUFDO0FBRU0sTUFBTUMsaUJBQWlCLEdBQUcsQ0FDN0JDLE1BQXFDLEVBQ3JDQyxJQUFxQixFQUNyQmpCLE9BQW9CLEVBQ3BCRyxTQUFtQixFQUNuQmUsSUFBYSxFQUNiZCxlQUE0QixHQUNyQjtJQUNQLE1BQU1lLFFBQVEsR0FBRzFCLDZDQUFNLENBQUNTLGlCQUFpQixDQUFDO1FBQUVDLFNBQVM7UUFBRUMsZUFBZTtLQUFFLENBQUMsQ0FBQztJQUUxRSxJQUFJZ0IsZUFBZSxHQUFrQixJQUFJO0lBRXpDLE1BQU1DLFFBQVEsR0FBRyxJQUFNO1FBQ25CLE1BQU1DLE9BQU8sR0FBR3BCLGlCQUFpQixDQUFDO1lBQUVGLE9BQU87WUFBRUcsU0FBUztZQUFFQyxlQUFlO1NBQUUsQ0FBQztRQUMxRVksTUFBTSxDQUFDO1lBQUVPLE9BQU8sRUFBRUosUUFBUSxDQUFDVixPQUFPO1lBQUVhLE9BQU87U0FBRSxDQUFDLENBQUM7UUFDL0NILFFBQVEsQ0FBQ1YsT0FBTyxHQUFHYSxPQUFPLENBQUM7UUFDM0JGLGVBQWUsR0FBRyxJQUFJLENBQUM7SUFDM0IsQ0FBQztJQUVEMUIseUJBQXlCLENBQUMsSUFBTTtRQUM1QixJQUFJLENBQUNDLFNBQVMsRUFBRTtZQUNaLE9BQU82QixTQUFTLENBQUM7UUFDckIsQ0FBQztRQUVELE1BQU1DLFlBQVksR0FBRyxJQUFNO1lBQ3ZCLElBQUlQLElBQUksRUFBRTtnQkFDTixJQUFJRSxlQUFlLEtBQUssSUFBSSxFQUFFO29CQUMxQkEsZUFBZSxHQUFHZixNQUFNLENBQUNxQixVQUFVLENBQUNMLFFBQVEsRUFBRUgsSUFBSSxDQUFDLENBQUM7Z0JBQ3hELENBQUM7WUFDTCxPQUFPO2dCQUNIRyxRQUFRLEVBQUUsQ0FBQztZQUNmLENBQUM7UUFDTCxDQUFDO1FBRUQsSUFBSWpCLGVBQWUsRUFBRTtZQUNqQkEsZUFBZSxDQUFDSyxPQUFPLEVBQUVrQixnQkFBZ0IsQ0FBQyxRQUFRLEVBQUVGLFlBQVksRUFBRTtnQkFBRUcsT0FBTyxFQUFFLElBQUk7YUFBRSxDQUFDLENBQUM7UUFDekYsT0FBTztZQUNIdkIsTUFBTSxDQUFDc0IsZ0JBQWdCLENBQUMsUUFBUSxFQUFFRixZQUFZLEVBQUU7Z0JBQUVHLE9BQU8sRUFBRSxJQUFJO2FBQUUsQ0FBQyxDQUFDO1FBQ3ZFLENBQUM7UUFFRCxPQUFPLElBQU07WUFDVCxJQUFJeEIsZUFBZSxFQUFFO2dCQUNqQkEsZUFBZSxDQUFDSyxPQUFPLEVBQUVvQixtQkFBbUIsQ0FBQyxRQUFRLEVBQUVKLFlBQVksQ0FBQyxDQUFDO1lBQ3pFLE9BQU87Z0JBQ0hwQixNQUFNLENBQUN3QixtQkFBbUIsQ0FBQyxRQUFRLEVBQUVKLFlBQVksQ0FBQyxDQUFDO1lBQ3ZELENBQUM7WUFFRCxJQUFJTCxlQUFlLEVBQUU7Z0JBQ2pCVSxZQUFZLENBQUNWLGVBQWUsQ0FBQyxDQUFDO1lBQ2xDLENBQUM7UUFDTCxDQUFDLENBQUM7SUFDTixDQUFDLEVBQUVILElBQUksQ0FBQyxDQUFDO0FBQ2IsQ0FBQyxDQUFDO0FBRUZGLGlCQUFpQixDQUFDZ0IsWUFBWSxHQUFHO0lBQzdCZCxJQUFJLEVBQUUsRUFBRTtJQUNSakIsT0FBTyxFQUFFLEtBQUs7SUFDZEcsU0FBUyxFQUFFLEtBQUs7SUFDaEJlLElBQUksRUFBRSxJQUFJO0lBQ1ZkLGVBQWUsRUFBRSxLQUFLO0NBQ3pCLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly90aWNfZm91bmRhdGlvbl93ZWJzaXRlLy4vY29tcG9uZW50cy9ob29rcy91c2VTY3JvbGxQb3NpdGlvbi50c3g/OTJlZSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VMYXlvdXRFZmZlY3QsIHVzZUVmZmVjdCwgdXNlUmVmLCBEZXBlbmRlbmN5TGlzdCwgTXV0YWJsZVJlZk9iamVjdCB9IGZyb20gJ3JlYWN0JztcclxuXHJcbmNvbnN0IHVzZUlzb21vcnBoaWNMYXlvdXRFZmZlY3QgPVxyXG4gIHR5cGVvZiB3aW5kb3cgIT09ICd1bmRlZmluZWQnID8gdXNlTGF5b3V0RWZmZWN0IDogdXNlRWZmZWN0O1xyXG5cclxuaW50ZXJmYWNlIElQb3NpdGlvbiB7XHJcbiAgICB4OiBudW1iZXI7XHJcbiAgICB5OiBudW1iZXI7XHJcbn1cclxuXHJcbmludGVyZmFjZSBJU2Nyb2xsUHJvcHMge1xyXG4gICAgcHJldlBvczogSVBvc2l0aW9uO1xyXG4gICAgY3VyclBvczogSVBvc2l0aW9uO1xyXG59XHJcblxyXG50eXBlIEVsZW1lbnRSZWYgPSBNdXRhYmxlUmVmT2JqZWN0PEhUTUxFbGVtZW50IHwgdW5kZWZpbmVkPjtcclxuXHJcbmNvbnN0IGlzQnJvd3NlciA9IHR5cGVvZiB3aW5kb3cgIT09IGB1bmRlZmluZWRgO1xyXG5jb25zdCB6ZXJvUG9zaXRpb24gPSB7IHg6IDAsIHk6IDAgfTtcclxuXHJcbmNvbnN0IGdldENsaWVudFJlY3QgPSAoZWxlbWVudD86IEhUTUxFbGVtZW50KSA9PiBlbGVtZW50Py5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcclxuXHJcbmNvbnN0IGdldFNjcm9sbFBvc2l0aW9uID0gKHtcclxuICAgIGVsZW1lbnQsXHJcbiAgICB1c2VXaW5kb3csXHJcbiAgICBib3VuZGluZ0VsZW1lbnQsXHJcbn06IHtcclxuICAgIGVsZW1lbnQ/OiBFbGVtZW50UmVmO1xyXG4gICAgYm91bmRpbmdFbGVtZW50PzogRWxlbWVudFJlZjtcclxuICAgIHVzZVdpbmRvdz86IGJvb2xlYW47XHJcbn0pID0+IHtcclxuICAgIGlmICghaXNCcm93c2VyKSB7XHJcbiAgICAgICAgcmV0dXJuIHplcm9Qb3NpdGlvbjtcclxuICAgIH1cclxuXHJcbiAgICBpZiAodXNlV2luZG93KSB7XHJcbiAgICAgICAgcmV0dXJuIHsgeDogd2luZG93LnNjcm9sbFgsIHk6IHdpbmRvdy5zY3JvbGxZIH07XHJcbiAgICB9XHJcblxyXG4gICAgY29uc3QgdGFyZ2V0UG9zaXRpb24gPSBnZXRDbGllbnRSZWN0KGVsZW1lbnQ/LmN1cnJlbnQgfHwgZG9jdW1lbnQuYm9keSk7XHJcbiAgICBjb25zdCBjb250YWluZXJQb3NpdGlvbiA9IGdldENsaWVudFJlY3QoYm91bmRpbmdFbGVtZW50Py5jdXJyZW50KTtcclxuXHJcbiAgICBpZiAoIXRhcmdldFBvc2l0aW9uKSB7XHJcbiAgICAgICAgcmV0dXJuIHplcm9Qb3NpdGlvbjtcclxuICAgIH1cclxuXHJcbiAgICByZXR1cm4gY29udGFpbmVyUG9zaXRpb25cclxuICAgICAgICA/IHtcclxuICAgICAgICAgICAgeDogKGNvbnRhaW5lclBvc2l0aW9uLnggfHwgMCkgLSAodGFyZ2V0UG9zaXRpb24ueCB8fCAwKSxcclxuICAgICAgICAgICAgeTogKGNvbnRhaW5lclBvc2l0aW9uLnkgfHwgMCkgLSAodGFyZ2V0UG9zaXRpb24ueSB8fCAwKSxcclxuICAgICAgICB9XHJcbiAgICAgICAgOiB7IHg6IHRhcmdldFBvc2l0aW9uLmxlZnQsIHk6IHRhcmdldFBvc2l0aW9uLnRvcCB9O1xyXG59O1xyXG5cclxuZXhwb3J0IGNvbnN0IHVzZVNjcm9sbFBvc2l0aW9uID0gKFxyXG4gICAgZWZmZWN0OiAocHJvcHM6IElTY3JvbGxQcm9wcykgPT4gdm9pZCxcclxuICAgIGRlcHM/OiBEZXBlbmRlbmN5TGlzdCxcclxuICAgIGVsZW1lbnQ/OiBFbGVtZW50UmVmLFxyXG4gICAgdXNlV2luZG93PzogYm9vbGVhbixcclxuICAgIHdhaXQ/OiBudW1iZXIsXHJcbiAgICBib3VuZGluZ0VsZW1lbnQ/OiBFbGVtZW50UmVmLFxyXG4pOiB2b2lkID0+IHtcclxuICAgIGNvbnN0IHBvc2l0aW9uID0gdXNlUmVmKGdldFNjcm9sbFBvc2l0aW9uKHsgdXNlV2luZG93LCBib3VuZGluZ0VsZW1lbnQgfSkpO1xyXG5cclxuICAgIGxldCB0aHJvdHRsZVRpbWVvdXQ6IG51bWJlciB8IG51bGwgPSBudWxsO1xyXG5cclxuICAgIGNvbnN0IGNhbGxCYWNrID0gKCkgPT4ge1xyXG4gICAgICAgIGNvbnN0IGN1cnJQb3MgPSBnZXRTY3JvbGxQb3NpdGlvbih7IGVsZW1lbnQsIHVzZVdpbmRvdywgYm91bmRpbmdFbGVtZW50IH0pO1xyXG4gICAgICAgIGVmZmVjdCh7IHByZXZQb3M6IHBvc2l0aW9uLmN1cnJlbnQsIGN1cnJQb3MgfSk7XHJcbiAgICAgICAgcG9zaXRpb24uY3VycmVudCA9IGN1cnJQb3M7XHJcbiAgICAgICAgdGhyb3R0bGVUaW1lb3V0ID0gbnVsbDtcclxuICAgIH07XHJcblxyXG4gICAgdXNlSXNvbW9ycGhpY0xheW91dEVmZmVjdCgoKSA9PiB7XHJcbiAgICAgICAgaWYgKCFpc0Jyb3dzZXIpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHVuZGVmaW5lZDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIGNvbnN0IGhhbmRsZVNjcm9sbCA9ICgpID0+IHtcclxuICAgICAgICAgICAgaWYgKHdhaXQpIHtcclxuICAgICAgICAgICAgICAgIGlmICh0aHJvdHRsZVRpbWVvdXQgPT09IG51bGwpIHtcclxuICAgICAgICAgICAgICAgICAgICB0aHJvdHRsZVRpbWVvdXQgPSB3aW5kb3cuc2V0VGltZW91dChjYWxsQmFjaywgd2FpdCk7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgICAgICBjYWxsQmFjaygpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfTtcclxuXHJcbiAgICAgICAgaWYgKGJvdW5kaW5nRWxlbWVudCkge1xyXG4gICAgICAgICAgICBib3VuZGluZ0VsZW1lbnQuY3VycmVudD8uYWRkRXZlbnRMaXN0ZW5lcignc2Nyb2xsJywgaGFuZGxlU2Nyb2xsLCB7IHBhc3NpdmU6IHRydWUgfSk7XHJcbiAgICAgICAgfSBlbHNlIHtcclxuICAgICAgICAgICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsIGhhbmRsZVNjcm9sbCwgeyBwYXNzaXZlOiB0cnVlIH0pO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgcmV0dXJuICgpID0+IHtcclxuICAgICAgICAgICAgaWYgKGJvdW5kaW5nRWxlbWVudCkge1xyXG4gICAgICAgICAgICAgICAgYm91bmRpbmdFbGVtZW50LmN1cnJlbnQ/LnJlbW92ZUV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsIGhhbmRsZVNjcm9sbCk7XHJcbiAgICAgICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgICAgICB3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcignc2Nyb2xsJywgaGFuZGxlU2Nyb2xsKTtcclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgaWYgKHRocm90dGxlVGltZW91dCkge1xyXG4gICAgICAgICAgICAgICAgY2xlYXJUaW1lb3V0KHRocm90dGxlVGltZW91dCk7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9O1xyXG4gICAgfSwgZGVwcyk7XHJcbn07XHJcblxyXG51c2VTY3JvbGxQb3NpdGlvbi5kZWZhdWx0UHJvcHMgPSB7XHJcbiAgICBkZXBzOiBbXSxcclxuICAgIGVsZW1lbnQ6IGZhbHNlLFxyXG4gICAgdXNlV2luZG93OiBmYWxzZSxcclxuICAgIHdhaXQ6IG51bGwsXHJcbiAgICBib3VuZGluZ0VsZW1lbnQ6IGZhbHNlLFxyXG59OyJdLCJuYW1lcyI6WyJ1c2VMYXlvdXRFZmZlY3QiLCJ1c2VFZmZlY3QiLCJ1c2VSZWYiLCJ1c2VJc29tb3JwaGljTGF5b3V0RWZmZWN0IiwiaXNCcm93c2VyIiwiemVyb1Bvc2l0aW9uIiwieCIsInkiLCJnZXRDbGllbnRSZWN0IiwiZWxlbWVudCIsImdldEJvdW5kaW5nQ2xpZW50UmVjdCIsImdldFNjcm9sbFBvc2l0aW9uIiwidXNlV2luZG93IiwiYm91bmRpbmdFbGVtZW50Iiwid2luZG93Iiwic2Nyb2xsWCIsInNjcm9sbFkiLCJ0YXJnZXRQb3NpdGlvbiIsImN1cnJlbnQiLCJkb2N1bWVudCIsImJvZHkiLCJjb250YWluZXJQb3NpdGlvbiIsImxlZnQiLCJ0b3AiLCJ1c2VTY3JvbGxQb3NpdGlvbiIsImVmZmVjdCIsImRlcHMiLCJ3YWl0IiwicG9zaXRpb24iLCJ0aHJvdHRsZVRpbWVvdXQiLCJjYWxsQmFjayIsImN1cnJQb3MiLCJwcmV2UG9zIiwidW5kZWZpbmVkIiwiaGFuZGxlU2Nyb2xsIiwic2V0VGltZW91dCIsImFkZEV2ZW50TGlzdGVuZXIiLCJwYXNzaXZlIiwicmVtb3ZlRXZlbnRMaXN0ZW5lciIsImNsZWFyVGltZW91dCIsImRlZmF1bHRQcm9wcyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/hooks/useScrollPosition.tsx\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ _app)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(689);
+;// CONCATENATED MODULE: external "react-icons/cg"
+const cg_namespaceObject = require("react-icons/cg");
+;// CONCATENATED MODULE: ./components/hooks/useScrollPosition.tsx
+
+const useIsomorphicLayoutEffect =  false ? 0 : external_react_.useEffect;
+const isBrowser = "undefined" !== `undefined`;
+const zeroPosition = {
+    x: 0,
+    y: 0
+};
+const getClientRect = (element)=>element?.getBoundingClientRect();
+const getScrollPosition = ({ element , useWindow , boundingElement  })=>{
+    if (!isBrowser) {
+        return zeroPosition;
+    }
+    if (useWindow) {
+        return {
+            x: window.scrollX,
+            y: window.scrollY
+        };
+    }
+    const targetPosition = getClientRect(element?.current || document.body);
+    const containerPosition = getClientRect(boundingElement?.current);
+    if (!targetPosition) {
+        return zeroPosition;
+    }
+    return containerPosition ? {
+        x: (containerPosition.x || 0) - (targetPosition.x || 0),
+        y: (containerPosition.y || 0) - (targetPosition.y || 0)
+    } : {
+        x: targetPosition.left,
+        y: targetPosition.top
+    };
+};
+const useScrollPosition = (effect, deps, element, useWindow, wait, boundingElement)=>{
+    const position = (0,external_react_.useRef)(getScrollPosition({
+        useWindow,
+        boundingElement
+    }));
+    let throttleTimeout = null;
+    const callBack = ()=>{
+        const currPos = getScrollPosition({
+            element,
+            useWindow,
+            boundingElement
+        });
+        effect({
+            prevPos: position.current,
+            currPos
+        });
+        position.current = currPos;
+        throttleTimeout = null;
+    };
+    useIsomorphicLayoutEffect(()=>{
+        if (!isBrowser) {
+            return undefined;
+        }
+        const handleScroll = ()=>{
+            if (wait) {
+                if (throttleTimeout === null) {
+                    throttleTimeout = window.setTimeout(callBack, wait);
+                }
+            } else {
+                callBack();
+            }
+        };
+        if (boundingElement) {
+            boundingElement.current?.addEventListener("scroll", handleScroll, {
+                passive: true
+            });
+        } else {
+            window.addEventListener("scroll", handleScroll, {
+                passive: true
+            });
+        }
+        return ()=>{
+            if (boundingElement) {
+                boundingElement.current?.removeEventListener("scroll", handleScroll);
+            } else {
+                window.removeEventListener("scroll", handleScroll);
+            }
+            if (throttleTimeout) {
+                clearTimeout(throttleTimeout);
+            }
+        };
+    }, deps);
+};
+useScrollPosition.defaultProps = {
+    deps: [],
+    element: false,
+    useWindow: false,
+    wait: null,
+    boundingElement: false
+};
+
+;// CONCATENATED MODULE: ./components/widgets/scrollToTop.tsx
+
+
+
+
+const ScrollToTop = ()=>{
+    const { 0: showOnScroll , 1: setShowOnScroll  } = (0,external_react_.useState)(false);
+    const handleScrollToTop = ()=>window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    useScrollPosition(({ currPos  })=>{
+        const isShow = currPos.y < -300.00; //prevPos.y
+        if (isShow !== showOnScroll) setShowOnScroll(isShow);
+    }, [
+        showOnScroll
+    ]);
+    return showOnScroll && /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        title: "scroll to top",
+        onClick: handleScrollToTop,
+        className: "fixed ease-in-out cursor-pointer bottom-10 grid place-items-center rounded-br-lg rounded-tl-lg rounded-bl-xl rounded-tr-xl right-5 h-[30px] w-[30px] bg-white hover:animate-bounce hover:bg-blue-600 text-blue-600 hover:text-white shadow-xl hover:shadow-blue-800 duration-150 group",
+        children: /*#__PURE__*/ jsx_runtime_.jsx(cg_namespaceObject.CgArrowUp, {
+            className: "text-2xl "
+        })
+    });
+};
+/* harmony default export */ const scrollToTop = (ScrollToTop);
+
+;// CONCATENATED MODULE: ./pages/_app.tsx
+
+
+
+
+const MyApp = ({ Component , pageProps  })=>{
+    (0,external_react_.useEffect)(()=>{
+        // 👇️ scroll to top on page load
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }, []);
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
+                ...pageProps
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(scrollToTop, {})
+        ]
+    });
+};
+/* harmony default export */ const _app = (MyApp);
+
 
 /***/ }),
 
-/***/ "./components/widgets/scrollToTop.tsx":
-/*!********************************************!*\
-  !*** ./components/widgets/scrollToTop.tsx ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_icons_cg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/cg */ \"react-icons/cg\");\n/* harmony import */ var react_icons_cg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_cg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _hooks_useScrollPosition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useScrollPosition */ \"./components/hooks/useScrollPosition.tsx\");\n\n\n\n\nconst ScrollToTop = ()=>{\n    const { 0: showOnScroll , 1: setShowOnScroll  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);\n    const handleScrollToTop = ()=>window.scrollTo({\n            top: 0,\n            left: 0,\n            behavior: \"smooth\"\n        });\n    (0,_hooks_useScrollPosition__WEBPACK_IMPORTED_MODULE_3__.useScrollPosition)(({ currPos  })=>{\n        const isShow = currPos.y < -300.00; //prevPos.y\n        if (isShow !== showOnScroll) setShowOnScroll(isShow);\n    }, [\n        showOnScroll\n    ]);\n    return showOnScroll && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        title: \"scroll to top\",\n        onClick: handleScrollToTop,\n        className: \"fixed ease-in-out cursor-pointer bottom-10 grid place-items-center rounded-br-lg rounded-tl-lg rounded-bl-xl rounded-tr-xl right-5 h-[30px] w-[30px] bg-white hover:animate-bounce hover:bg-blue-600 text-blue-600 hover:text-white shadow-xl hover:shadow-blue-800 duration-150 group\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_icons_cg__WEBPACK_IMPORTED_MODULE_2__.CgArrowUp, {\n            className: \"text-2xl \"\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\pc7\\\\Documents\\\\DINOVIX ltd\\\\Nos Clients\\\\TiC Foundation\\\\tic_foundation_website\\\\components\\\\widgets\\\\scrollToTop.tsx\",\n            lineNumber: 20,\n            columnNumber: 13\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\pc7\\\\Documents\\\\DINOVIX ltd\\\\Nos Clients\\\\TiC Foundation\\\\tic_foundation_website\\\\components\\\\widgets\\\\scrollToTop.tsx\",\n        lineNumber: 19,\n        columnNumber: 9\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollToTop);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL3dpZGdldHMvc2Nyb2xsVG9Ub3AudHN4LmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUE7QUFBdUM7QUFDRztBQUNxQjtBQUUvRCxNQUFNSSxXQUFXLEdBQUcsSUFBTTtJQUV0QixNQUFNLEtBQUNDLFlBQVksTUFBRUMsZUFBZSxNQUFJTCwrQ0FBUSxDQUFDLEtBQUssQ0FBQztJQUV2RCxNQUFNTSxpQkFBaUIsR0FBRyxJQUFNQyxNQUFNLENBQUNDLFFBQVEsQ0FBQztZQUFFQyxHQUFHLEVBQUUsQ0FBQztZQUFFQyxJQUFJLEVBQUUsQ0FBQztZQUFFQyxRQUFRLEVBQUUsUUFBUTtTQUFFLENBQUM7SUFFeEZULDJFQUFpQixDQUFDLENBQUMsRUFBRVUsT0FBTyxHQUFFLEdBQUs7UUFDL0IsTUFBTUMsTUFBTSxHQUFJRCxPQUFPLENBQUNFLENBQUMsR0FBRyxDQUFDLE1BQU0sRUFBSSxXQUFXO1FBQ2xELElBQUlELE1BQU0sS0FBS1QsWUFBWSxFQUFFQyxlQUFlLENBQUNRLE1BQU0sQ0FBQyxDQUFDO0lBQ3pELENBQUMsRUFBRTtRQUFDVCxZQUFZO0tBQUMsQ0FBQztJQUdsQixPQUNJLFlBQWEsa0JBQ2IsOERBQUNXLEtBQUc7UUFBQ0MsS0FBSyxFQUFDLGVBQWU7UUFBRUMsT0FBTyxFQUFFWCxpQkFBaUI7UUFBRVksU0FBUyxFQUFDLHdSQUEwUjtrQkFDeFYsNEVBQUNqQixxREFBUztZQUFDaUIsU0FBUyxFQUFDLFdBQVk7Ozs7O3FCQUFHOzs7OztpQkFDbEMsQ0FDVDtBQUNMLENBQUM7QUFFRCxpRUFBZWYsV0FBVyIsInNvdXJjZXMiOlsid2VicGFjazovL3RpY19mb3VuZGF0aW9uX3dlYnNpdGUvLi9jb21wb25lbnRzL3dpZGdldHMvc2Nyb2xsVG9Ub3AudHN4PzQxOTUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXHJcbmltcG9ydCB7IENnQXJyb3dVcCB9IGZyb20gJ3JlYWN0LWljb25zL2NnJ1xyXG5pbXBvcnQgeyB1c2VTY3JvbGxQb3NpdGlvbiB9IGZyb20gJy4uL2hvb2tzL3VzZVNjcm9sbFBvc2l0aW9uJztcclxuXHJcbmNvbnN0IFNjcm9sbFRvVG9wID0gKCkgPT4ge1xyXG5cclxuICAgIGNvbnN0IFtzaG93T25TY3JvbGwsIHNldFNob3dPblNjcm9sbF0gPSB1c2VTdGF0ZShmYWxzZSlcclxuXHJcbiAgICBjb25zdCBoYW5kbGVTY3JvbGxUb1RvcCA9ICgpID0+IHdpbmRvdy5zY3JvbGxUbyh7IHRvcDogMCwgbGVmdDogMCwgYmVoYXZpb3I6ICdzbW9vdGgnIH0pO1xyXG5cclxuICAgIHVzZVNjcm9sbFBvc2l0aW9uKCh7IGN1cnJQb3MgfSkgPT4ge1xyXG4gICAgICAgIGNvbnN0IGlzU2hvdyA9IChjdXJyUG9zLnkgPCAtMzAwLjAwKSA7IC8vcHJldlBvcy55XHJcbiAgICAgICAgaWYgKGlzU2hvdyAhPT0gc2hvd09uU2Nyb2xsKSBzZXRTaG93T25TY3JvbGwoaXNTaG93KTtcclxuICAgIH0sIFtzaG93T25TY3JvbGxdKVxyXG5cclxuXHJcbiAgICByZXR1cm4gKFxyXG4gICAgICAgIChzaG93T25TY3JvbGwpICYmXHJcbiAgICAgICAgPGRpdiB0aXRsZT0nc2Nyb2xsIHRvIHRvcCcgIG9uQ2xpY2s9e2hhbmRsZVNjcm9sbFRvVG9wfSBjbGFzc05hbWU9J2ZpeGVkIGVhc2UtaW4tb3V0IGN1cnNvci1wb2ludGVyIGJvdHRvbS0xMCBncmlkIHBsYWNlLWl0ZW1zLWNlbnRlciByb3VuZGVkLWJyLWxnIHJvdW5kZWQtdGwtbGcgIHJvdW5kZWQtYmwteGwgcm91bmRlZC10ci14bCByaWdodC01IGgtWzMwcHhdIHctWzMwcHhdIGJnLXdoaXRlIGhvdmVyOmFuaW1hdGUtYm91bmNlIGhvdmVyOmJnLWJsdWUtNjAwIHRleHQtYmx1ZS02MDAgaG92ZXI6dGV4dC13aGl0ZSAgc2hhZG93LXhsIGhvdmVyOnNoYWRvdy1ibHVlLTgwMCBkdXJhdGlvbi0xNTAgZ3JvdXAnPlxyXG4gICAgICAgICAgICA8Q2dBcnJvd1VwIGNsYXNzTmFtZT0ndGV4dC0yeGwgICcgLz5cclxuICAgICAgICA8L2Rpdj5cclxuICAgIClcclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgU2Nyb2xsVG9Ub3AiXSwibmFtZXMiOlsiUmVhY3QiLCJ1c2VTdGF0ZSIsIkNnQXJyb3dVcCIsInVzZVNjcm9sbFBvc2l0aW9uIiwiU2Nyb2xsVG9Ub3AiLCJzaG93T25TY3JvbGwiLCJzZXRTaG93T25TY3JvbGwiLCJoYW5kbGVTY3JvbGxUb1RvcCIsIndpbmRvdyIsInNjcm9sbFRvIiwidG9wIiwibGVmdCIsImJlaGF2aW9yIiwiY3VyclBvcyIsImlzU2hvdyIsInkiLCJkaXYiLCJ0aXRsZSIsIm9uQ2xpY2siLCJjbGFzc05hbWUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/widgets/scrollToTop.tsx\n");
-
-/***/ }),
-
-/***/ "./pages/_app.tsx":
-/*!************************!*\
-  !*** ./pages/_app.tsx ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/globals.css */ \"./styles/globals.css\");\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_widgets_scrollToTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/widgets/scrollToTop */ \"./components/widgets/scrollToTop.tsx\");\n\n\n\n\nconst MyApp = ({ Component , pageProps  })=>{\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        // 👇️ scroll to top on page load\n        window.scrollTo({\n            top: 0,\n            left: 0,\n            behavior: \"smooth\"\n        });\n    }, []);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n                ...pageProps\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\pc7\\\\Documents\\\\DINOVIX ltd\\\\Nos Clients\\\\TiC Foundation\\\\tic_foundation_website\\\\pages\\\\_app.tsx\",\n                lineNumber: 14,\n                columnNumber: 13\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_widgets_scrollToTop__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {}, void 0, false, {\n                fileName: \"C:\\\\Users\\\\pc7\\\\Documents\\\\DINOVIX ltd\\\\Nos Clients\\\\TiC Foundation\\\\tic_foundation_website\\\\pages\\\\_app.tsx\",\n                lineNumber: 15,\n                columnNumber: 13\n            }, undefined)\n        ]\n    }, void 0, true);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLnRzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUFBO0FBQWtDO0FBRUo7QUFDOEI7QUFFNUQsTUFBTUUsS0FBSyxHQUFHLENBQUMsRUFBRUMsU0FBUyxHQUFFQyxTQUFTLEdBQVksR0FBSztJQUNsREosZ0RBQVMsQ0FBQyxJQUFNO1FBQ1osZ0NBQWdDO1FBQ2hDSyxNQUFNLENBQUNDLFFBQVEsQ0FBQztZQUFDQyxHQUFHLEVBQUUsQ0FBQztZQUFFQyxJQUFJLEVBQUUsQ0FBQztZQUFFQyxRQUFRLEVBQUUsUUFBUTtTQUFDLENBQUMsQ0FBQztJQUMzRCxDQUFDLEVBQUUsRUFBRSxDQUFDLENBQUM7SUFFUCxxQkFDSTs7MEJBQ0ksOERBQUNOLFNBQVM7Z0JBQUUsR0FBR0MsU0FBUzs7Ozs7eUJBQUk7MEJBQzVCLDhEQUFDSCx1RUFBVzs7Ozt5QkFBRzs7b0JBQ2hCLENBQ047QUFDTCxDQUFDO0FBRUQsaUVBQWVDLEtBQUsiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly90aWNfZm91bmRhdGlvbl93ZWJzaXRlLy4vcGFnZXMvX2FwcC50c3g/MmZiZSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VFZmZlY3QgfSBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCB0eXBlIHsgQXBwUHJvcHMgfSBmcm9tICduZXh0L2FwcCdcclxuaW1wb3J0ICcuLi9zdHlsZXMvZ2xvYmFscy5jc3MnXHJcbmltcG9ydCBTY3JvbGxUb1RvcCBmcm9tICcuLi9jb21wb25lbnRzL3dpZGdldHMvc2Nyb2xsVG9Ub3AnO1xyXG5cclxuY29uc3QgTXlBcHAgPSAoeyBDb21wb25lbnQsIHBhZ2VQcm9wcyB9OiBBcHBQcm9wcykgPT4ge1xyXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgICAgICAvLyDwn5GH77iPIHNjcm9sbCB0byB0b3Agb24gcGFnZSBsb2FkXHJcbiAgICAgICAgd2luZG93LnNjcm9sbFRvKHt0b3A6IDAsIGxlZnQ6IDAsIGJlaGF2aW9yOiAnc21vb3RoJ30pO1xyXG4gICAgfSwgW10pO1xyXG5cclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPD5cclxuICAgICAgICAgICAgPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSAvPlxyXG4gICAgICAgICAgICA8U2Nyb2xsVG9Ub3AgLz5cclxuICAgICAgICA8Lz5cclxuICAgIClcclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgTXlBcHAiXSwibmFtZXMiOlsidXNlRWZmZWN0IiwiU2Nyb2xsVG9Ub3AiLCJNeUFwcCIsIkNvbXBvbmVudCIsInBhZ2VQcm9wcyIsIndpbmRvdyIsInNjcm9sbFRvIiwidG9wIiwibGVmdCIsImJlaGF2aW9yIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/_app.tsx\n");
-
-/***/ }),
-
-/***/ "./styles/globals.css":
-/*!****************************!*\
-  !*** ./styles/globals.css ***!
-  \****************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
+/***/ 689:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-icons/cg":
-/*!*********************************!*\
-  !*** external "react-icons/cg" ***!
-  \*********************************/
+/***/ 997:
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("react-icons/cg");
-
-/***/ }),
-
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("react/jsx-dev-runtime");
+module.exports = require("react/jsx-runtime");
 
 /***/ })
 
@@ -95,7 +193,7 @@ module.exports = require("react/jsx-dev-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/_app.tsx"));
+var __webpack_exports__ = (__webpack_exec__(255));
 module.exports = __webpack_exports__;
 
 })();
