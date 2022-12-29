@@ -87,7 +87,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className={styles.cta }>
           <motion.a
-            className="px-3 py-2 bg-neutral-50 hover:cursor-pointer text-blue-700 dark:bg-yellow-600 dark:text-slate-900 font-medium rounded-full w-full lg:w-max mt-8 lg:mt-0"
+            className="px-3 py-2 bg-neutral-50 hover:cursor-pointer text-blue-700 horver:bg-yellow-600 horver:text-slate-900 font-medium rounded-full w-full lg:w-max mt-8 lg:mt-0"
             href='https://docs.google.com/forms/d/1m3S9AKbFxEXd2VIdyampszRbF_UNP-7IK8n3JeDipi4' target={'_blank'}
             whileHover={{ scale: 1.1, borderRadius: '50px' }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}>
