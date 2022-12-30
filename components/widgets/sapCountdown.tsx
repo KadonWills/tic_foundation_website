@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 
 const SapCountdown = () => {
 
-    const [deadline, setDeadline] = useState(timeDiffCalc(new Date("30 Dec 2022 12:00:00")))
+    const [deadline, setDeadline] = useState(timeDiffCalc(new Date("15 Jan 2023 12:00:00")))
     const {days, hours, minutes, seconds} = deadline
 
     setInterval(
         () => {
-            setDeadline(timeDiffCalc(new Date("30 Dec 2022 12:00:00")))
+            setDeadline(timeDiffCalc(new Date("15 Jan 2023 12:00:00")))
         }
         , 1000
     )
